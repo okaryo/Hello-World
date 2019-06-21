@@ -17,3 +17,6 @@ hello, world!
 i'm Tom.
 TEXT
 puts introduction
+
+time = Time.now
+puts time
