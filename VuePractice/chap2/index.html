@@ -7,10 +7,18 @@
 </head>
 <body>
   <div id="app">
-    <p>Hello {{ message }}</p>
-    <input type="text" :value="message">
+    <input type="text" :value="message[1]">
+
     <p>{{ count }}回クリックしたよ！</p>
     <button v-on:click="increment">カウントを増やす</button>
+
+    <p v-bind:class="{ child: isChild, 'is-active': isActive }">Text</p>
+    <p v-bind:style="{ color: textColor, backgroundColor: bgColor }">Text</p>
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.2">
+      <circle cx="100" cy="75" v-bind:r="radius" fill="lightpink" />
+    </svg>
+    <input type="range" min="0" max="100" v-model="radius">
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13"></script>
