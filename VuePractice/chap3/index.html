@@ -11,6 +11,27 @@
 
     <div v-on:click.right="handler">example</div>
     <div v-on:click.right.prevent="handler">example</div>
+
+    <input v-model="message">
+    <p>{{ message }}</p>
+
+    <textarea v-model="textmessage" cols="30" rows="10"></textarea>
+    <pre>{{ textmessage }}</pre>
+
+    <label>
+      <input type="checkbox" v-model="val">{{ val }}
+    </label>
+
+    <label><input type="radio" value="a" v-model="radioval">A</label>
+    <label><input type="radio" value="b" v-model="radioval">B</label>
+    <label><input type="radio" value="c" v-model="radioval">C</label>
+    <p>{{ radioval }}</p>
+
+    <input type="range" v-model.number="range">{{ range }}
+
+    <header v-bind:class="{ compact: scrollY > 200 }">
+      200pxより下にスクロールしたら.compactを付与
+    </header>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13"></script>
