@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Vue!</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="app">
+    <button v-on:click="show=!show">change</button>
+    <transition>
+      <div v-show="show">トランジションさせたい要素</div>
+    </transition>
+
+    <transition name="demo">
+      <div v-if="show">トランジションさせたい要素</div>
+    </transition>
+
+    <button v-on:click="order=!order">change</button>
+    <transition-group tag="ul" class="list">
+      <li v-for="item in sortedList" v-bind:key="item.id">
+        {{ item.name }} {{ item.price }}yen
+      </li>
+    </transition-group>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash"></script>
+  <script src="main.js"></script>
+</body>
+</html>

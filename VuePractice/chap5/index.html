@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Vue!</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="app">
+    <my-component></my-component>
+
+    <comp-child val="これは子A"></comp-child>
+    <comp-child val="これは子B"></comp-child>
+
+    <comp-child v-bind:val="message" class="item"></comp-child>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13"></script>
+  <script src="main.js"></script>
+</body>
+</html>
